@@ -1,0 +1,66 @@
+
+<!--default parameter is when we don't pass argument to parameneter it takes default vakue or we say it allow us to set 
+default values for function para if no vslue or undefined passed   -->
+<!-- modules is use to oraganize the code into separate file with the felp of emport export functiooniltiy
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Parameter & Modules Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f7f7f7;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #output p {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Default Parameters & Modules Example</h1>
+    <div id="output"></div>
+
+    <script type="module">
+        // Import functions from module
+        import { square, cube, factorial } from './modules_export_utils.js';
+
+        const outputDiv = document.getElementById("output");
+
+        // Using imported functions
+        outputDiv.innerHTML += `<p>Square of 5: ${square(5)}</p>`;
+        outputDiv.innerHTML += `<p>Cube of 3: ${cube(3)}</p>`;
+        outputDiv.innerHTML += `<p>Factorial of 5: ${factorial(5)}</p>`;
+
+        // Default parameter example
+        function concateString(x, y = "This Pranav this side!") {
+            return x + y;
+        }
+
+        const result = concateString("Hi ");
+        console.log(result);
+        outputDiv.innerHTML += `<p>ConcateString: ${result}</p>`;
+
+        // Default parameter using object
+        function objUser(user = { name: "none", age: 0 }) {
+            return `Name: ${user.name}, Age: ${user.age}`;
+        }
+
+        outputDiv.innerHTML += `<p>${objUser({ name: "Pranav", age: 25 })}</p>`;
+        outputDiv.innerHTML += `<p>${objUser()}</p>`; // Using default object
+    </script>
+
+</body>
+</html>

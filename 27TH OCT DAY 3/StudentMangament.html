@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            background-color: #4a4ab8;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover { background-color: #3b3b9c; }
+        .card {
+            background: #fff;
+            padding: 15px 20px;
+            margin: 15px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+        .card h5 { color: #4a4ab8; margin-bottom: 10px; }
+        .card p { margin: 5px 0; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+<h1>Student Management System</h1>
+<h2>Click the button below to see the demo</h2>
+
+<button onclick="runAssignment()">Run Assignment Demo</button>
+
+<div id="output"></div>
+
+<script>
+function runAssignment() {
+    const outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = ""; // Clear previous output
+
+    // 1. Course and subjects
+    let courseName = "MERN Stack Development";
+    const instituteName = "Great Learning";
+
+    const coreSubjects = ["HTML", "CSS", "JavaScript", "ES6"];
+    const advancedSubjects = ["Node.js", "Express.js", "MongoDB"];
+    const allSubjects = [...coreSubjects, ...advancedSubjects];
+
+    outputDiv.innerHTML += `
+        <div class="card">
+            <h5>Course Details</h5>
+            <p><strong>Course Name:</strong> ${courseName}</p>
+            <p><strong>Institute Name:</strong> ${instituteName}</p>
+            <p><strong>All Subjects:</strong> ${allSubjects.join(", ")}</p>
+        </div>
+    `;
+
+    // 2. Arrow function greeting
+    const greet = (name) => `Welcome to the course ${courseName}, ${name}!`;
+    outputDiv.innerHTML += `
+        <div class="card">
+            <h5>Greeting</h5>
+            <p>${greet("Vishwas")}</p>
+        </div>
+    `;
+
+    // 3. Student class with course
+    class Student {
+        constructor(name, age, course, skills) {
+            this.name = name;
+            this.age = age;
+            this.course = course;
+            this.skills = skills;
+        }
+
+        display() {
+            // Filter skills that match course subjects
+            const matchedSkills = this.skills.filter(skill => allSubjects.includes(skill));
+            return `Student Name: ${this.name}, Age: ${this.age}, Course: ${this.course}, Skills: ${matchedSkills.join(", ")}`;
+        }
+    }
+
+    const student1 = new Student("Pranav", 25, "MERN Stack Development", ["Python", "ML", "JavaScript", "MongoDB"]);
+    const student2 = new Student("Kavya", 24, "MERN Stack Development", ["Angular", "Node.js", "HTML", "CSS"]);
+
+    outputDiv.innerHTML += `
+        <div class="card">
+            <h5>Students Information</h5>
+            <p>${student1.display()}</p>
+            <p>${student2.display()}</p>
+        </div>
+    `;
+
+    // 4. Map for grades
+    const studentGrades = new Map();
+    studentGrades.set("Pranav", "A");
+    studentGrades.set("Kavya", "A+");
+
+    let gradeText = "";
+    studentGrades.forEach((grade, name) => gradeText += `${name}: ${grade}<br>`);
+
+    outputDiv.innerHTML += `
+        <div class="card">
+            <h5>Student Grades</h5>
+            <p>${gradeText}</p>
+        </div>
+    `;
+
+    // 5. Set of unique skills across all students (course matched)
+    const allMatchedSkills = new Set([...student1.skills, ...student2.skills].filter(skill => allSubjects.includes(skill)));
+
+    outputDiv.innerHTML += `
+        <div class="card">
+            <h5>Unique Skills (Matched to Course)</h5>
+            <p>${[...allMatchedSkills].join(", ")}</p>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
