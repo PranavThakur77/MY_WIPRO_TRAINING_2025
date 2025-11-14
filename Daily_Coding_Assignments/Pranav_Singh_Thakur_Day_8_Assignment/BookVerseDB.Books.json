@@ -1,0 +1,87 @@
+[{
+  "_id": 1,
+  "title": "Foundation",
+  "genre": "Science Fiction",
+  "publicationYear": 1952,
+  "authorId": 1,
+  "ratings": [
+    {
+      "user": "Alice Johnson",
+      "score": 5,
+      "comment": "Classic sci-fi!"
+    },
+    {
+      "user": "Bob Smith",
+      "score": 4,
+      "comment": "Enjoyed it a lot"
+    }
+  ]
+},
+{
+  "_id": 2,
+  "title": "I, Robot",
+  "genre": "Science Fiction",
+  "publicationYear": 1950,
+  "authorId": 1,
+  "ratings": [
+    {
+      "user": "Charlie Brown",
+      "score": 5,
+      "comment": "Brilliant ideas!"
+    }
+  ]
+},
+{
+  "_id": 3,
+  "title": "Harry Potter and the Philosopher's Stone",
+  "genre": "Fantasy",
+  "publicationYear": 1997,
+  "authorId": 2,
+  "ratings": [
+    {
+      "user": "Alice Johnson",
+      "score": 5,
+      "comment": "Loved it!"
+    }
+  ]
+},
+{
+  "_id": 4,
+  "title": "Harry Potter and the Deathly Hallows",
+  "genre": "Fantasy",
+  "publicationYear": 2007,
+  "authorId": 2,
+  "ratings": []
+},
+{
+  "_id": 5,
+  "title": "A Game of Thrones",
+  "genre": "Fantasy",
+  "publicationYear": 1996,
+  "authorId": 3,
+  "ratings": [
+    {
+      "user": "Bob Smith",
+      "score": 5,
+      "comment": "Epic read!"
+    },
+    {
+      "user": "Charlie Brown",
+      "score": 4,
+      "comment": "Intriguing characters"
+    },
+    {
+      "user": "Diana Prince",
+      "score": 5,
+      "comment": "Absolutely amazing!"
+    }
+  ]
+},
+{
+  "_id": 6,
+  "title": "The Caves of Steel",
+  "genre": "Science Fiction",
+  "publicationYear": 1953,
+  "authorId": 1,
+  "ratings": []
+}]

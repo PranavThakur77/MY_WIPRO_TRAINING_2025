@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App Using Module Pattern</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6dd5fa, #2980b9);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        /* Input and button styling */
+        #city {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        #btn {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6b6b;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #btn:hover {
+            background-color: #ee5253;
+        }
+
+        /* Result card styling */
+        #result {
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+            min-width: 300px;
+            text-align: center;
+        }
+
+        #result h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+
+        #result p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        /* Error message styling */
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Weather App</h2>
+
+    <!-- Input field for city name -->
+    <input type="text" id="city" placeholder="Enter city name">
+    <!-- Button to fetch weather -->
+    <button id="btn">Get Weather</button>
+
+    <!-- Div to display results or errors -->
+    <div id="result"></div>
+
+    <script type="module">
+        // Import functions from the weather module
+        import { fetchWeatherData, displayWeather, showError } from "./weather_module.js";
+
+        // Add click event listener to the button
+        document.getElementById("btn").addEventListener("click", async () => {
+            const city = document.getElementById("city").value;
+
+            if (!city.trim()) {
+                showError("Please enter a city name");
+                return;
+            }
+
+            try {
+                const data = await fetchWeatherData(city);
+                displayWeather(data);
+            } catch (error) {
+                console.error(error);
+                showError("City not found or API issue");
+            }
+        });
+    </script>
+
+</body>
+</html>

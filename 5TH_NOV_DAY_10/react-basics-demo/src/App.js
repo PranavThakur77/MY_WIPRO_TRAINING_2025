@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import Welcome from './components/welcome';
+import Contactus from './components/contactus';
 
-function App() {
+
+function App() { //  a function component as it is returning JSX
   const user = "Pranav";
   return (
     <div className="App">
@@ -9,6 +12,12 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+
+          <h1> Fucntional component demo</h1>
+          <Welcome name="Pranav"/>
+          <Welcome name="John"/>
+          <Welcome name="Doe"/>
+
         </p>
         <a
           className="App-link"
@@ -22,6 +31,12 @@ function App() {
       <div>
         <h1> Welcome, {user}</h1>
         <p> This is JSX demo in action</p>
+        <p>JSX should return single parent element</p>
+        <p>JSX expression go in between {  } </p>
+        <p>Attributes in JSX uses camel casing (className, OnClick)</p>
+
+         <h2>Calling contact us component</h2>
+         <Contactus> This data is coming from a react component created via CLI</Contactus>
       </div>
     </div>
   );

@@ -1,0 +1,97 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f5fdf5;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  border-radius: 50%;
+}
+
+/* Navigation Menu */
+nav {
+  background-color: #388e3c;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: block;
+  padding: 14px 20px;
+}
+
+nav a:hover {
+  background-color: #2e7d32;
+  border-radius: 5px;
+}
+
+/* Content Sections */
+.content {
+  padding: 30px;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px 0;
+  border: 3px solid #4caf50;
+}
+
+/* Footer */
+footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .logo {
+    position: static;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}

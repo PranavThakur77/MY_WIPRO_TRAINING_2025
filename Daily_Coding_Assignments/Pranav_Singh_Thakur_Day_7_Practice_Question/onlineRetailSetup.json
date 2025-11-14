@@ -1,0 +1,134 @@
+// ===== Step 1: Use or Create Database =====
+use onlineRetail
+
+// ===== Step 2: Create Products Collection with Sample Documents =====
+db.products.insertMany([
+  {
+    name: "Wireless Mouse",
+    category: "Electronics",
+    price: 25.99,
+    stock: 150,
+    tags: ["computer", "accessory"]
+  },
+  {
+    name: "Gaming Keyboard",
+    category: "Electronics",
+    price: 55.49,
+    stock: 100,
+    tags: ["computer", "gaming"]
+  },
+  {
+    name: "Running Shoes",
+    category: "Footwear",
+    price: 75.00,
+    stock: 200,
+    tags: ["sports", "fitness"]
+  },
+  {
+    name: "Coffee Mug",
+    category: "Home & Kitchen",
+    price: 12.99,
+    stock: 500,
+    tags: ["kitchen", "drinkware"]
+  }
+])
+
+// ===== Step 3: Create Users Collection with Sample Documents =====
+db.users.insertMany([
+  {
+    username: "john_doe",
+    email: "john@example.com",
+    passwordHash: "hashedpassword123",
+    createdAt: new Date()
+  },
+  {
+    username: "jane_smith",
+    email: "jane@example.com",
+    passwordHash: "hashedpassword456",
+    createdAt: new Date()
+  }
+])
+
+// ===== Step 4: Create Orders Collection with Sample Documents =====
+db.orders.insertMany([
+  {
+    username: "john_doe",
+    orderDate: new Date("2025-11-01"),
+    products: [
+      { name: "Wireless Mouse", price: 25.99, quantity: 2 },
+      { name: "Coffee Mug", price: 12.99, quantity: 1 }
+    ],
+    totalCost: 64.97
+  },
+  {
+    username: "jane_smith",
+    orderDate: new Date("2025-11-03"),
+    products: [
+      { name: "Gaming Keyboard", price: 55.49, quantity: 1 },
+      { name: "Running Shoes", price: 75.00, quantity: 1 }
+    ],
+    totalCost: 130.49
+  }
+])
+
+// ===== Step 5: Create Indexes for Efficient Queries =====
+
+// Index to quickly find products by category
+db.products.createIndex({ category: 1 })
+
+// Index to quickly find users by username
+db.users.createIndex({ username: 1 })
+
+// Index to quickly find orders by username and orderDate
+db.orders.createIndex({ username: 1, orderDate: -1 })
+
+// ===== Step 6: Sample Queries =====
+
+// 1. Find all products in Electronics category
+db.products.find({ category: "Electronics" }).pretty()
+
+// 2. Find all orders of a specific user
+db.orders.find({ username: "john_doe" }).pretty()
+
+// 3. Find all users
+db.users.find().pretty()
+
+// ===== Step 7: Display Full Data =====
+
+// Show Product Catalog
+print("=== Product Catalog ===")
+db.products.find().pretty()
+
+// Show Customer Orders
+print("=== Customer Orders ===")
+db.orders.find().pretty()
+
+// Show User Authentication Data
+print("=== User Accounts ===")
+db.users.find().pretty()
+
+// ===== Step 8: Querying and Indexing Examples =====
+
+// 1. Products by Category (Electronics)
+print("=== Products in Electronics Category ===")
+db.products.find({ category: "Electronics" }).pretty()
+
+// 2. Orders of a Specific User (john_doe)
+print("=== Orders of User: john_doe ===")
+db.orders.find({ username: "john_doe" }).pretty()
+
+// 3. Show all Users
+print("=== All Users ===")
+db.users.find().pretty()
+
+// 4. Show Indexes for Products
+print("=== Indexes on Products Collection ===")
+printjson(db.products.getIndexes())
+
+// 5. Show Indexes for Users
+print("=== Indexes on Users Collection ===")
+printjson(db.users.getIndexes())
+
+// 6. Show Indexes for Orders
+print("=== Indexes on Orders Collection ===")
+printjson(db.orders.getIndexes())

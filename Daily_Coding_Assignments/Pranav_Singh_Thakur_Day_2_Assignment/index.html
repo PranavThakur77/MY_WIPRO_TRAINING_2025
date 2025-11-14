@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ojaswini School Par Excellence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOGIN PAGE -->
+  <section id="loginPage" class="centered-container">
+    <div class="login-box">
+      <img src="My_School_Logo.jpeg" alt="School Logo" class="school-logo">
+      <h2>Ojaswini School Par Excellence</h2>
+      <h3>Student Login</h3>
+      <input type="text" id="username" placeholder="Enter Username" />
+      <input type="password" id="password" placeholder="Enter Password" />
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showRegister()">Register Here</a></p>
+    </div>
+  </section>
+
+  <!-- REGISTER PAGE -->
+  <section id="registerPage" class="centered-container hidden">
+    <div class="login-box">
+      <img src="My_School_Logo.jpeg" alt="School Logo" class="school-logo">
+      <h2>Register Student</h2>
+      <input type="text" id="regUsername" placeholder="Enter Username" />
+      <input type="password" id="regPassword" placeholder="Enter Password" />
+      <button onclick="register()">Register</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login Here</a></p>
+    </div>
+  </section>
+
+  <!-- WELCOME PAGE -->
+  <section id="welcomePage" class="hidden">
+    <header>
+      <img src="My_School_Logo.jpeg" alt="School Logo" class="logo">
+      <h1>Ojaswini School Par Excellence</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('welcomeContent')">Home</a></li>
+        <li><a href="#" onclick="showSection('profileSection')">Student Profile</a></li>
+        <li><a href="#" onclick="showSection('activityPage')">Monthly Chart</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Home Section -->
+      <section id="welcomeContent" class="content">
+        <h2>Welcome, <span id="studentName"></span> 🌸</h2>
+        <p>Welcome to your online portal. Explore your profile and monthly activities.</p>
+      </section>
+
+      <!-- Profile Section -->
+      <section id="profileSection" class="content hidden">
+        <h2>Student Profile</h2>
+        <img src="My_Profile.jpg" alt="Profile Photo" class="profile-photo">
+        <p><strong>Name:</strong> Pranav Singh Thakur</p>
+        <p><strong>Email:</strong> pranav.singh@gmail.com</p>
+        <p><strong>Address:</strong> Ojaswini School Par Excellence, Damoh</p>
+      </section>
+
+      <!-- Monthly Activities Section -->
+      <section id="activityPage" class="content hidden">
+        <h2>📅 Monthly Activities</h2>
+        <label for="subjectSelect"><strong>Select Subject:</strong></label>
+        <select id="subjectSelect" onchange="showActivities()">
+          <option value="">--Select--</option>
+          <option value="Maths">Maths</option>
+          <option value="Science">Science</option>
+          <option value="English">English</option>
+        </select>
+
+        <div id="activityList" class="activity-box"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Ojaswini School Par Excellence | All Rights Reserved</p>
+    </footer>
+  </section>
+
+  <!-- Link external JS -->
+  <script src="script.js"></script>
+</body>
+</html>
