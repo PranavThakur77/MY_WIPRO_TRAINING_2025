@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2e0057);
+  color: white;
+}
+
+.App {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* TITLES */
+h2 {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ff00c8, #a800ff, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FORM */
+form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 35px;
+  border: 2px solid rgba(255, 0, 200, 0.3);
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.2);
+  transition: 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 200, 0.4);
+  transform: translateY(-3px);
+}
+
+form h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #ff00c8, #a800ff, #00eaff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 200, 0.5);
+}
+
+button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 25px rgba(255, 0, 200, 0.8);
+}
+
+/* COURSE CARDS */
+.course-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff00c8;
+  box-shadow: 0 0 18px rgba(255, 0, 200, 0.2);
+  transition: 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(168, 0, 255, 0.4);
+}
+
+.course-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ff00c8, #a800ff, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.course-info {
+  color: #ddd;
+  font-size: 15px;
+  margin: 4px 0;
+}

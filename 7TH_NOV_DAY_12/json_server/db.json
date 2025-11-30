@@ -1,0 +1,28 @@
+
+
+{
+    "Courses": [
+        {
+            "id": 1,
+            "title": "Introduction to Programming",
+            "description": "Learn the basics of programming using Python.",
+            "instructor": "John Doe",
+            "duration": "6 weeks"
+        },
+        {
+            "id": 2,
+            "title": "Web Development",
+            "description": "Build modern web applications using HTML, CSS, and JavaScript.",
+            "instructor": "Jane Smith",
+            "duration": "8 weeks"
+        },
+        {
+            "id": 3,
+            "title": "Data Science Fundamentals",
+            "description": "Explore data analysis, visualization, and machine learning techniques.",
+            "instructor": "Alice Johnson",
+            "duration": "10 weeks"
+        }
+    ]
+}
+
